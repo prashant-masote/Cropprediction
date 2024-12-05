@@ -18,17 +18,18 @@
 	<h1>Crop Prediction Model</h1>
     <!-- N	P	K	temperature	humidity	ph	rainfall	label -->
      <!-- Main Input For Receiving Query to our ML -->
-  <form action="{{ url_for('predict') }}" method="post">
-    <input type="text" name="Nitrogen" placeholder="Nitrogen" required="required" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places" />
-    <input type="text" name="Phosphorus" placeholder="Phosphorus" required="required" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places" />
-    <input type="text" name="Potassium" placeholder="Potassium" required="required" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places" />
-    <input type="text" name="temperature" placeholder="Temperature" required="required" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places" />
-    <input type="text" name="humidity" placeholder="Humidity" required="required" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places" />
-    <input type="text" name="pH" placeholder="pH" required="required" pattern="^\d{1,2}(\.\d{1,2})?$" title="Please enter a number with up to 2 digits and 2 decimal places" />
-    <input type="text" name="rainfall" placeholder="Rainfall" required="required" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places" />
-
-    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-</form>
+     <form action="{{ url_for('predict') }}" method="post">
+      <input type="number" name="Nitrogen" placeholder="Nitrogen" required="required" step="0.001" min="2.5" max="999.999" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places (greater than or equal to 0.9)" />
+      <input type="number" name="Phosphorus" placeholder="Phosphorus" required="required" step="0.001" min="2.5" max="999.999" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places (greater than or equal to 0.9)" />
+      <input type="number" name="Potassium" placeholder="Potassium" required="required" step="0.001" min="2.5" max="999.999" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places (greater than or equal to 0.9)" />
+      <input type="number" name="temperature" placeholder="Temperature" required="required" step="0.001" min="0" max="999.999" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places (greater than or equal to 0.9)" />
+      <input type="number" name="humidity" placeholder="Humidity" required="required" step="0.001" min="30" max="999.999" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places (greater than or equal to 0.9)" />
+      <input type="number" name="pH" placeholder="pH" required="required" step="0.01" min="0.9" max="14" pattern="^\d{1,2}(\.\d{1,2})?$" title="Please enter a valid pH value (between 0.9 and 14) with up to 2 digits and 2 decimal places" />
+      <input type="number" name="rainfall" placeholder="Rainfall" required="required" step="0.001" min="30" max="999.999" pattern="^\d{1,3}(\.\d{1,3})?$" title="Please enter a number with up to 3 digits and 3 decimal places (greater than or equal to 0.9)" />
+  
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+  
 
 
 

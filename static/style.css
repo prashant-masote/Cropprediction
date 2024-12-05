@@ -1,35 +1,90 @@
+/* Base Styles */
 body {
   background-image: url("farm.jpg");
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  margin: 0;
 }
-h1 {
-    margin-left:100px;
-}
-input{
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-bottom: 4px solid black;
-}
-button {
-  background-color: #4CAF50; /* Green */
-  margin : auto;
-  color: white;
-  padding: 15px 100px;
+
+.container {
+  background: rgba(255, 255, 255, 0.8); /* Slight opacity for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-left:170px
 }
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
 #predi{
-    margin-left:60px;
-    color:white;
+  margin-left:60px;
+  color:white;
 }
+
+
+/* Responsive Styles for Desktop */
+@media (min-width: 768px) {
+  body {
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .container {
+    margin-left: 100px;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  button {
+    padding: 15px 80px;
+    font-size: 1.2rem;
+  }
+}
+
 
 
 
